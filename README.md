@@ -1,6 +1,6 @@
 # Hi Food - Ứng dụng Quản lý Nhà hàng
 <img width="1897" height="729" alt="image" src="https://github.com/user-attachments/assets/72a5a6d9-ef52-4de5-bd71-228cb378159b" />
-<img width="1898" height="789" alt="image" src="https://github.com/user-attachments/assets/d0688dec-de1f-4a8b-8d87-cd9890d37577" />
+<img width="1897" height="729" alt="image" src="https://github.com/user-attachments/assets/d0688dec-de1f-4a8b-8d87-cd9890d37577" />
 
 ## Mô tả dự án
 
