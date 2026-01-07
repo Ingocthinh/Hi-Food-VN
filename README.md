@@ -1,4 +1,5 @@
 # Hi Food VN - Ứng dụng Quản lý Nhà hàng
+Ảnh Demo sản phẩm:
 <img width="1898" height="732" alt="image" src="https://github.com/user-attachments/assets/c27ccbd1-ab0e-40e7-b43c-2583aeb9cb02" />
 <img width="1907" height="900" alt="image" src="https://github.com/user-attachments/assets/aba8e474-f228-4cc4-9311-0bcd671ed6f8" />
 <img width="1904" height="815" alt="image" src="https://github.com/user-attachments/assets/772cb715-de7f-4d83-8cb4-eeff705f80d5" />
