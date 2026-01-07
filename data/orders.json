@@ -1,0 +1,120 @@
+[
+  {
+    "id": "order-001",
+    "items": [
+      {
+        "productId": "p1",
+        "name": "Trà sữa trân châu",
+        "price": 35000,
+        "quantity": 2
+      },
+      {
+        "productId": "p5",
+        "name": "Bánh mì thịt",
+        "price": 25000,
+        "quantity": 1
+      }
+    ],
+    "total": 95000,
+    "customerName": "Nguyễn Văn A",
+    "note": "Ít đường",
+    "address": "123 Đường ABC, Quận 1, TP.HCM",
+    "status": "completed",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": 1760065925082
+  },
+  {
+    "id": "order-002",
+    "items": [
+      {
+        "productId": "p6",
+        "name": "Phở bò",
+        "price": 45000,
+        "quantity": 1
+      },
+      {
+        "productId": "p2",
+        "name": "Cà phê sữa đá",
+        "price": 30000,
+        "quantity": 1
+      }
+    ],
+    "total": 75000,
+    "customerName": "Trần Thị B",
+    "note": "",
+    "address": "456 Đường XYZ, Quận 2, TP.HCM",
+    "status": "completed",
+    "createdAt": "2024-01-15T11:15:00Z",
+    "updatedAt": 1760065929053
+  },
+  {
+    "id": "order-003",
+    "items": [
+      {
+        "productId": "p9",
+        "name": "Pizza hải sản",
+        "price": 129000,
+        "quantity": 1
+      },
+      {
+        "productId": "p11",
+        "name": "Khoai tây chiên",
+        "price": 30000,
+        "quantity": 2
+      }
+    ],
+    "total": 189000,
+    "customerName": "Lê Văn C",
+    "note": "Pizza không cay",
+    "address": "789 Đường DEF, Quận 3, TP.HCM",
+    "status": "completed",
+    "createdAt": "2024-01-15T12:00:00Z"
+  },
+  {
+    "id": "order-004",
+    "items": [
+      {
+        "productId": "p8",
+        "name": "Gà rán",
+        "price": 55000,
+        "quantity": 1
+      },
+      {
+        "productId": "p3",
+        "name": "Nước cam ép",
+        "price": 28000,
+        "quantity": 1
+      }
+    ],
+    "total": 83000,
+    "customerName": "Phạm Thị D",
+    "note": "",
+    "address": "321 Đường GHI, Quận 4, TP.HCM",
+    "status": "cancelled",
+    "createdAt": "2024-01-15T13:30:00Z"
+  },
+  {
+    "id": "order-005",
+    "items": [
+      {
+        "productId": "p19",
+        "name": "Sushi cá hồi",
+        "price": 159000,
+        "quantity": 1
+      },
+      {
+        "productId": "p25",
+        "name": "Bánh ngọt chocolate",
+        "price": 45000,
+        "quantity": 1
+      }
+    ],
+    "total": 204000,
+    "customerName": "Hoàng Văn E",
+    "note": "Sushi tươi",
+    "address": "654 Đường JKL, Quận 5, TP.HCM",
+    "status": "completed",
+    "createdAt": "2024-01-15T14:45:00Z",
+    "updatedAt": 1760065920341
+  }
+]

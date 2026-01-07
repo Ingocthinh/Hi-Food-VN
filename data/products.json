@@ -1,0 +1,415 @@
+[
+  {
+    "id": "p1",
+    "name": "Trà sữa trân châu",
+    "category": "Đồ uống",
+    "price": 35000,
+    "image": "/products/tra-sua.jpg"
+  },
+  {
+    "id": "p2",
+    "name": "Cà phê sữa đá",
+    "category": "Đồ uống",
+    "price": 30000,
+    "image": "/products/cafe-sua.jpg"
+  },
+  {
+    "id": "p3",
+    "name": "Nước cam ép",
+    "category": "Đồ uống",
+    "price": 28000,
+    "image": "/products/nuoc-cam.jpg"
+  },
+  {
+    "id": "p4",
+    "name": "Sinh tố bơ",
+    "category": "Đồ uống",
+    "price": 39000,
+    "image": "/products/sinh-to-bo.jpg"
+  },
+  {
+    "id": "p5",
+    "name": "Bánh mì thịt",
+    "category": "Đồ ăn",
+    "price": 25000,
+    "image": "/products/banh-mi-thit.jpg"
+  },
+  {
+    "id": "p6",
+    "name": "Phở bò",
+    "category": "Đồ ăn",
+    "price": 45000,
+    "image": "/products/pho-bo.jpg"
+  },
+  {
+    "id": "p7",
+    "name": "Bún chả",
+    "category": "Đồ ăn",
+    "price": 40000,
+    "image": "/products/bun-cha.jpg"
+  },
+  {
+    "id": "p8",
+    "name": "Gà rán",
+    "category": "Đồ ăn",
+    "price": 55000,
+    "image": "/products/ga-ran.jpg"
+  },
+  {
+    "id": "p9",
+    "name": "Pizza hải sản",
+    "category": "Đồ ăn",
+    "price": 129000,
+    "image": "/products/pizza-hai-san.jpg"
+  },
+  {
+    "id": "p10",
+    "name": "Hamburger bò",
+    "category": "Đồ ăn",
+    "price": 65000,
+    "image": "/products/hamburger-bo.jpg"
+  },
+  {
+    "id": "p11",
+    "name": "Khoai tây chiên",
+    "category": "Ăn vặt",
+    "price": 30000,
+    "image": "/products/khoai-tay-chien.jpg"
+  },
+  {
+    "id": "p12",
+    "name": "Xúc xích nướng",
+    "category": "Ăn vặt",
+    "price": 32000,
+    "image": "/products/xuc-xich.jpg"
+  },
+  {
+    "id": "p13",
+    "name": "Cơm gà xối mỡ",
+    "category": "Đồ ăn",
+    "price": 52000,
+    "image": "/products/com-ga.jpg"
+  },
+  {
+    "id": "p14",
+    "name": "Bánh tráng trộn",
+    "category": "Ăn vặt",
+    "price": 25000,
+    "image": "/products/banh-trang-tron.jpg"
+  },
+  {
+    "id": "p15",
+    "name": "Hủ tiếu",
+    "category": "Đồ ăn",
+    "price": 42000,
+    "image": "/products/hu-tieu.jpg"
+  },
+  {
+    "id": "p16",
+    "name": "Bánh bao",
+    "category": "Ăn vặt",
+    "price": 18000,
+    "image": "/products/banh-bao.jpg"
+  },
+  {
+    "id": "p17",
+    "name": "Bánh xèo",
+    "category": "Đồ ăn",
+    "price": 49000,
+    "image": "/products/banh-xeo.jpg"
+  },
+  {
+    "id": "p18",
+    "name": "Nem nướng",
+    "category": "Ăn vặt",
+    "price": 35000,
+    "image": "/products/nem-nuong.jpg"
+  },
+  {
+    "id": "p19",
+    "name": "Sushi cá hồi",
+    "category": "Đồ ăn",
+    "price": 159000,
+    "image": "/products/sushi-ca-hoi.jpg"
+  },
+  {
+    "id": "p20",
+    "name": "Mì Ý sốt bò bằm",
+    "category": "Đồ ăn",
+    "price": 99000,
+    "image": "/products/mi-y-bo-bam.jpg"
+  },
+  {
+    "id": "p21",
+    "name": "Trà đào cam sả",
+    "category": "Đồ uống",
+    "price": 39000,
+    "image": "/products/tra-dao.jpg"
+  },
+  {
+    "id": "p22",
+    "name": "Trà chanh",
+    "category": "Đồ uống",
+    "price": 22000,
+    "image": "/products/tra-chanh.jpg"
+  },
+  {
+    "id": "p23",
+    "name": "Soda bạc hà",
+    "category": "Đồ uống",
+    "price": 35000,
+    "image": "/products/soda-bac-ha.jpg"
+  },
+  {
+    "id": "p24",
+    "name": "Matcha latte",
+    "category": "Đồ uống",
+    "price": 45000,
+    "image": "/products/matcha-latte.jpg"
+  },
+  {
+    "id": "p25",
+    "name": "Bánh ngọt chocolate",
+    "category": "Tráng miệng",
+    "price": 45000,
+    "image": "/products/banh-chocolate.jpg"
+  },
+  {
+    "id": "p26",
+    "name": "Panna cotta",
+    "category": "Tráng miệng",
+    "price": 55000,
+    "image": "/products/panna-cotta.jpg"
+  },
+  {
+    "id": "p27",
+    "name": "Tiramisu",
+    "category": "Tráng miệng",
+    "price": 60000,
+    "image": "/products/tiramisu.jpg"
+  },
+  {
+    "id": "p28",
+    "name": "Kem dừa",
+    "category": "Tráng miệng",
+    "price": 30000,
+    "image": "/products/kem-dua.jpg"
+  },
+  {
+    "id": "p29",
+    "name": "Sữa chua trái cây",
+    "category": "Tráng miệng",
+    "price": 29000,
+    "image": "/products/sua-chua-trai-cay.jpg"
+  },
+  {
+    "id": "p30",
+    "name": "Bánh flan",
+    "category": "Tráng miệng",
+    "price": 22000,
+    "image": "/products/banh-flan.jpg"
+  },
+  {
+    "id": "p31",
+    "name": "Cơm tấm sườn bì chả",
+    "category": "Đồ ăn",
+    "price": 55000,
+    "image": "/products/com-tam.jpg"
+  },
+  {
+    "id": "p32",
+    "name": "Bánh canh cua",
+    "category": "Đồ ăn",
+    "price": 65000,
+    "image": "/products/banh-canh-cua.jpg"
+  },
+  {
+    "id": "p33",
+    "name": "Bò lúc lắc",
+    "category": "Đồ ăn",
+    "price": 125000,
+    "image": "/products/bo-luc-lac.jpg"
+  },
+  {
+    "id": "p34",
+    "name": "Lẩu thái",
+    "category": "Đồ ăn",
+    "price": 199000,
+    "image": "/products/lau-thai.jpg"
+  },
+  {
+    "id": "p35",
+    "name": "Miến trộn Hàn Quốc",
+    "category": "Đồ ăn",
+    "price": 99000,
+    "image": "/products/mien-tron.jpg"
+  },
+  {
+    "id": "p36",
+    "name": "Bánh gạo cay",
+    "category": "Đồ ăn",
+    "price": 59000,
+    "image": "/products/tteokbokki.jpg"
+  },
+  {
+    "id": "p37",
+    "name": "Gimbap",
+    "category": "Đồ ăn",
+    "price": 59000,
+    "image": "/products/gimbap.jpg"
+  },
+  {
+    "id": "p38",
+    "name": "Cơm chiên dương châu",
+    "category": "Đồ ăn",
+    "price": 52000,
+    "image": "/products/com-chien.jpg"
+  },
+  {
+    "id": "p39",
+    "name": "Bún bò Huế",
+    "category": "Đồ ăn",
+    "price": 49000,
+    "image": "/products/bun-bo-hue.jpg"
+  },
+  {
+    "id": "p40",
+    "name": "Bánh cuốn",
+    "category": "Đồ ăn",
+    "price": 35000,
+    "image": "/products/banh-cuon.jpg"
+  },
+  {
+    "id": "p41",
+    "name": "Nước dừa tươi",
+    "category": "Đồ uống",
+    "price": 25000,
+    "image": "/products/nuoc-dua.jpg"
+  },
+  {
+    "id": "p42",
+    "name": "Sữa tươi trân châu đường đen",
+    "category": "Đồ uống",
+    "price": 42000,
+    "image": "/products/duong-den.jpg"
+  },
+  {
+    "id": "p43",
+    "name": "Cacao nóng",
+    "category": "Đồ uống",
+    "price": 35000,
+    "image": "/products/cacao.jpg"
+  },
+  {
+    "id": "p44",
+    "name": "Trà ô long vải",
+    "category": "Đồ uống",
+    "price": 42000,
+    "image": "/products/tra-o-long.jpg"
+  },
+  {
+    "id": "p45",
+    "name": "Bánh su kem",
+    "category": "Tráng miệng",
+    "price": 28000,
+    "image": "/products/su-kem.jpg"
+  },
+  {
+    "id": "p46",
+    "name": "Chè khúc bạch",
+    "category": "Tráng miệng",
+    "price": 38000,
+    "image": "/products/che-khuc-bach.jpg"
+  },
+  {
+    "id": "p47",
+    "name": "Bánh plan dừa",
+    "category": "Tráng miệng",
+    "price": 25000,
+    "image": "/products/banh-plan-dua.jpg"
+  },
+  {
+    "id": "p48",
+    "name": "Há cảo",
+    "category": "Đồ ăn",
+    "price": 45000,
+    "image": "/products/ha-cao.jpg"
+  },
+  {
+    "id": "p49",
+    "name": "Bánh pía sầu riêng",
+    "category": "Ăn vặt",
+    "price": 30000,
+    "image": "/products/banh-pia.jpg"
+  },
+  {
+    "id": "p50",
+    "name": "Bánh mì bò nướng",
+    "category": "Đồ ăn",
+    "price": 35000,
+    "image": "/products/banh-mi-bo-nuong.jpg"
+  },
+  {
+    "id": "p51",
+    "name": "Bánh mì gà nướng",
+    "category": "Đồ ăn",
+    "price": 35000,
+    "image": "/products/banh-mi-ga-nuong.jpg"
+  },
+  {
+    "id": "p52",
+    "name": "Cơm sườn nướng",
+    "category": "Đồ ăn",
+    "price": 59000,
+    "image": "/products/com-suon-nuong.jpg"
+  },
+  {
+    "id": "p53",
+    "name": "Mì ramen",
+    "category": "Đồ ăn",
+    "price": 119000,
+    "image": "/products/ramen.jpg"
+  },
+  {
+    "id": "p54",
+    "name": "Bánh waffle dâu",
+    "category": "Tráng miệng",
+    "price": 49000,
+    "image": "/products/waffle-dau.jpg"
+  },
+  {
+    "id": "p55",
+    "name": "Kem vani",
+    "category": "Tráng miệng",
+    "price": 30000,
+    "image": "/products/kem-vani.jpg"
+  },
+  {
+    "id": "p56",
+    "name": "Bánh donut",
+    "category": "Tráng miệng",
+    "price": 25000,
+    "image": "/products/donut.jpg"
+  },
+  {
+    "id": "p57",
+    "name": "Trà sữa matcha",
+    "category": "Đồ uống",
+    "price": 42000,
+    "image": "/products/tra-sua-matcha.jpg"
+  },
+  {
+    "id": "p58",
+    "name": "Soda chanh dây",
+    "category": "Đồ uống",
+    "price": 35000,
+    "image": "/products/soda-chanh-day.jpg"
+  },
+  {
+    "id": "p60",
+    "name": "Trà gừng mật ong",
+    "category": "Đồ uống",
+    "price": 32000,
+    "image": "/products/tra-gung.jpg"
+  }
+]

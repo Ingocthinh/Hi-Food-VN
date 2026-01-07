@@ -1,0 +1,17 @@
+[
+  {
+    "id": "003215e4-17a2-472f-b68f-2c1697e6a09f",
+    "name": "Lê Ngọc Thịnh",
+    "email": "ic.lengocthinh@gmail.com",
+    "password": "123",
+    "role": "admin"
+  },
+  {
+    "id": "076cb283-112c-4652-a594-ef8dfac00e9c",
+    "name": "linh",
+    "email": "linh@gmail.com",
+    "phone": "123",
+    "password": "123"
+  
+  }
+]

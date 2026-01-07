@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Food - Trang Nhân Viên</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/admin.css">
+    <style>
+        /* Staff specific styles */
+        .staff-layout {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .staff-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .staff-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .staff-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+        
+        .staff-logo i {
+            font-size: 2rem;
+        }
+        
+        .staff-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .staff-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-stat {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .quick-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .quick-stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .quick-stat.pending .quick-stat-icon { background: var(--warning-color); }
+        .quick-stat.processing .quick-stat-icon { background: var(--secondary-color); }
+        .quick-stat.completed .quick-stat-icon { background: var(--success-color); }
+        .quick-stat.total .quick-stat-icon { background: var(--primary-color); }
+        
+        .quick-stat h3 {
+            margin: 0 0 0.5rem;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-color);
+        }
+        
+        .quick-stat p {
+            margin: 0;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .orders-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        
+        .section-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-header h2 i {
+            color: var(--primary-color);
+        }
+        
+        .order-filters {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--border-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .order-filters select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            background: white;
+            font-size: 0.875rem;
+        }
+        
+        .orders-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .order-card {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .order-card:hover {
+            background: var(--border-light);
+        }
+        
+        .order-card:last-child {
+            border-bottom: none;
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .order-info h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        .order-info p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        .order-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .order-status.pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning-color);
+        }
+        
+        .order-status.processing {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--secondary-color);
+        }
+        
+        .order-status.completed {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+        }
+        
+        .order-status.cancelled {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger-color);
+        }
+        
+        .order-details {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .order-items {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .order-total {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .order-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .btn-status {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .btn-status.accept {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .btn-status.accept:hover {
+            background: #059669;
+        }
+        
+        .btn-status.complete {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-status.complete:hover {
+            background: #4f46e5;
+        }
+        
+        .btn-status.cancel {
+            background: var(--danger-color);
+            color: white;
+        }
+        
+        .btn-status.cancel:hover {
+            background: #dc2626;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .empty-state h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+            color: var(--text-color);
+        }
+        
+        .empty-state p {
+            margin: 0;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .staff-header {
+                padding: 1rem;
+            }
+            
+            .staff-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .staff-content {
+                padding: 1rem;
+            }
+            
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .order-filters {
+                flex-direction: column;
+            }
+            
+            .order-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .order-details {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .order-actions {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="staff-layout">
+        <header class="staff-header">
+            <nav class="staff-nav">
+                <div class="staff-logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>Hi <strong>Food</strong> Staff</span>
+                </div>
+                <div class="staff-actions">
+                    <div class="user-info">
+                        <span>Xin chào, <strong id="staffName">Nhân viên</strong></span>
+                    </div>
+                    <button id="btnLogout" class="btn ghost">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="staff-content">
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+                <div class="quick-stat pending">
+                    <div class="quick-stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 id="pendingOrders">0</h3>
+                    <p>Đơn chờ xử lý</p>
+                </div>
+                <div class="quick-stat processing">
+                    <div class="quick-stat-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 id="processingOrders">0</h3>
+                    <p>Đang xử lý</p>
+                </div>
+                <div class="quick-stat completed">
+                    <div class="quick-stat-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 id="completedOrders">0</h3>
+                    <p>Hoàn thành</p>
+                </div>
+                <div class="quick-stat total">
+                    <div class="quick-stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 id="totalOrders">0</h3>
+                    <p>Tổng đơn hàng</p>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div class="orders-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> Quản lý Đơn hàng</h2>
+                    <button id="refreshOrders" class="btn refresh-btn">
+                        <i class="fas fa-sync-alt"></i> Làm mới
+                    </button>
+                </div>
+
+                <div class="order-filters">
+                    <select id="statusFilter">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="pending">Chờ xử lý</option>
+                        <option value="processing">Đang xử lý</option>
+                        <option value="completed">Hoàn thành</option>
+                        <option value="cancelled">Đã hủy</option>
+                    </select>
+                    <select id="timeFilter">
+                        <option value="">Tất cả thời gian</option>
+                        <option value="today">Hôm nay</option>
+                        <option value="week">Tuần này</option>
+                        <option value="month">Tháng này</option>
+                    </select>
+                </div>
+
+                <div class="orders-list" id="ordersList">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Đang tải...</p>
+        </div>
+    </div>
+
+    <script src="/staff.js"></script>
+</body>
+</html>
+
+
+

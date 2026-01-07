@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hi Food - Đồ ăn & Đồ uống</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+  <header class="hf-header">
+    <div class="hf-logo">Hi <span>Food</span></div>
+    <nav class="hf-nav">
+      <a href="#home" id="navHome">Trang chủ</a>
+      <a href="#menu" id="navMenu">Thực đơn</a>
+      <a href="#delivery" id="navDelivery">Giao hàng</a>
+      <a href="#checkout" id="navCheckout">Thanh toán</a>
+    </nav>
+    <div class="hf-actions">
+      <div class="lang-switch">
+        <button id="langVi" class="chip small active"> VI</button>
+        <button id="langEn" class="chip small"> EN</button>
+      </div>
+      <button id="btnLogin" class="btn ghost">Đăng nhập</button>
+      <button id="btnRegister" class="btn ghost">Đăng ký</button>
+      <div id="userBox" class="user-box hidden">
+        <span id="userName"></span>
+        <button id="btnLogout" class="btn ghost">Đăng xuất</button>
+      </div>
+      <button id="btnCart" class="btn cart" aria-label="Giỏ hàng">
+        <span class="cart-ico" aria-hidden="true">🛒</span><span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="blob red b1"></div>
+    <div class="blob white b2"></div>
+    <div class="hero-content">
+      <h1 class="shine">Ăn ngon - Uống đã - Giao nhanh</h1>
+      <p>Hơn 60 món ăn & thức uống được chọn lọc, phục vụ mọi lúc.</p>
+      <a href="#menu" class="btn cta">Khám phá thực đơn</a>
+    </div>
+    <div class="hero-bg"></div>
+  </section>
+
+  <main id="menu" class="menu">
+    <div class="menu-toolbar">
+      <input id="searchInput" type="text" placeholder="Tìm món..." />
+      <select id="categoryFilter">
+        <option value="">Tất cả danh mục</option>
+      </select>
+      <select id="sortSelect">
+        <option value="">Sắp xếp</option>
+        <option value="price-asc">Giá tăng dần</option>
+        <option value="price-desc">Giá giảm dần</option>
+        <option value="name-asc">Tên A-Z</option>
+      </select>
+    </div>
+    <div id="productsGrid" class="grid"></div>
+  </main>
+
+  <section id="delivery" class="checkout">
+    <h2 id="deliveryTitle">Giao hàng</h2>
+    <div class="checkout-summary">
+      <div class="checkout-card">
+        <div class="delivery">
+          <div class="address-box">
+            <input id="addressInput" placeholder="Nhập địa chỉ giao hàng" />
+            <div id="addressSuggest" class="suggest hidden"></div>
+          </div>
+          <div class="delivery-actions">
+            <button id="btnLocate" class="btn ghost">Lấy vị trí của tôi</button>
+            <span id="distanceLabel">Khoảng cách: <strong id="distanceKm">0 km</strong></span>
+          </div>
+          <div class="map-toolbar">
+            <button id="toggleMapLock" class="btn ghost small" aria-pressed="true">🔒 Khóa bản đồ</button>
+          </div>
+          <div id="map" class="map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="checkout" class="checkout">
+    <h2 id="checkoutTitle">Thanh toán QR</h2>
+    <div class="checkout-summary">
+      <div class="checkout-card">
+        <div class="total-line"><span id="lblSubtotal">Tạm tính</span><i class="colon" aria-hidden="true"></i><strong id="subtotal">0 VND</strong></div>
+        <div class="total-line"><span id="lblShipping">Vận chuyển</span><i class="colon" aria-hidden="true"></i><strong id="shipping">0 VND</strong></div>
+        <div class="total-big"><span id="lblTotal">Tổng cộng</span><i class="colon" aria-hidden="true"></i><strong id="total">0 VND</strong></div>
+        <div class="pay-chips" id="paymentMethods">
+          <button class="chip active" data-method="momo" id="chipMomo">Momo</button>
+          <button class="chip" data-method="zalopay" id="chipZalo">ZaloPay</button>
+          <button class="chip" data-method="vnpay" id="chipVnpay">VNPAY</button>
+          <button class="chip" data-method="bank" id="chipBank">Ngân hàng</button>
+        </div>
+        <div class="note">
+          <input id="orderNote" placeholder="Ghi chú cho đơn hàng (tuỳ chọn)" />
+        </div>
+        <div class="cta-row">
+          <button id="btnRefreshTotal" class="btn">Cập nhật tổng</button>
+          <button id="btnCopyTotal" class="btn ghost">Sao chép tổng</button>
+        </div>
+        <p class="hint" id="transferHint">Sau khi quét mã và chuyển khoản, vui lòng ghi rõ nội dung đặt hàng (VD: HiFood + số điện thoại).</p>
+      </div>
+      <div class="checkout-card">
+        <h3 id="qrTitle">Mã QR Thanh Toán</h3>
+        <div id="qrList" class="qr-list"></div>
+        <p class="hint" id="qrHint">QR Thanh toán</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="modalAuth" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="closeAuth">×</button>
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Đăng nhập</button>
+        <button id="tabRegister" class="tab">Đăng ký</button>
+      </div>
+      <div id="paneLogin" class="pane">
+        <input id="loginIdentity" type="text" placeholder="Email hoặc SĐT" />
+        <div class="input-wrap">
+          <input id="loginPassword" type="password" placeholder="Mật khẩu" />
+          <button id="toggleLoginPassword" class="eye" aria-label="Hiện/ẩn mật khẩu">👁️</button>
+        </div>
+        <div class="social-row">
+          <button id="loginGoogle" class="btn ghost social">🔴 Google</button>
+          <button id="loginFacebook" class="btn ghost social">🔵 Facebook</button>
+        </div>
+        <button id="doLogin" class="btn">Đăng nhập</button>
+      </div>
+      <div id="paneRegister" class="pane hidden">
+        <input id="regName" type="text" placeholder="Họ và tên" />
+        <input id="regEmail" type="email" placeholder="Email" />
+        <input id="regPhone" type="tel" placeholder="Số điện thoại" />
+        <div class="input-wrap">
+          <input id="regPassword" type="password" placeholder="Mật khẩu" />
+          <button id="toggleRegPassword" class="eye" aria-label="Hiện/ẩn mật khẩu">👁️</button>
+        </div>
+        <div class="input-wrap">
+          <input id="regPassword2" type="password" placeholder="Xác nhận mật khẩu" />
+          <button id="toggleRegPassword2" class="eye" aria-label="Hiện/ẩn mật khẩu">👁️</button>
+        </div>
+        <div class="social-row">
+          <button id="registerGoogle" class="btn ghost social">🔴 Google</button>
+          <button id="registerFacebook" class="btn ghost social">🔵 Facebook</button>
+        </div>
+        <button id="doRegister" class="btn">Đăng ký</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="cartDrawer" class="cart-drawer hidden">
+    <div class="cart-header">
+      <h3>Giỏ hàng</h3>
+      <button id="closeCart" class="btn ghost icon" aria-label="Đóng">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div>Tổng: <strong id="cartTotal">0 VND</strong></div>
+      <a href="#checkout" id="goCheckout" class="btn">Thanh toán</a>
+    </div>
+  </aside>
+
+  <script src="/config.js"></script>
+  <!-- Google Identity Services for Web -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- Facebook SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <script src="/app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // Prefetch QR list silently
+    fetch('/api/qr-list').catch(()=>{});
+  </script>
+  <footer class="footer">© 2025 Hi Food • Ngon - Nhanh - Nhiều Ưu Đãi</footer>
+
+  <!-- Chatbox Button -->
+  <button id="chatToggle" class="chat-toggle">💬</button>
+  <div id="chatBox" class="chatbox hidden">
+    <div class="chat-header">
+      <div class="title">Hi Food Assistant</div>
+      <button id="chatClose" class="btn icon" aria-label="Đóng">×</button>
+    </div>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-input">
+      <input id="chatText" placeholder="Nhập câu hỏi của bạn..." />
+      <button id="chatSend" class="btn">Gửi</button>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
