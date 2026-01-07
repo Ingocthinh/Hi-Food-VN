@@ -1,7 +1,5 @@
 # Hi Food VN - Ứng dụng Quản lý Nhà hàng
 <img width="1897" height="729" alt="image" src="https://github.com/user-attachments/assets/72a5a6d9-ef52-4de5-bd71-228cb378159b" />
-<img width="1897" height="729" alt="image" src="https://github.com/user-attachments/assets/d0688dec-de1f-4a8b-8d87-cd9890d37577" />
-
 ## Mô tả dự án
 
 Hi Food là một ứng dụng web toàn diện dành cho việc quản lý nhà hàng, bao gồm bán đồ ăn và đồ uống trực tuyến. Dự án cung cấp giao diện cho khách hàng, nhân viên và quản trị viên, với các tính năng như đặt hàng, quản lý sản phẩm, thanh toán qua QR code và quản lý phiên làm việc.
