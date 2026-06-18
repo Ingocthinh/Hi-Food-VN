@@ -1,5 +1,5 @@
 # Hi Food VN - Ứng dụng Quản lý Nhà hàng
-Ảnh Demo sản phẩm:
+Link sản phẩm:
 https://hi-food-vn.onrender.com/
 
 
